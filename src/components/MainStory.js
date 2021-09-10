@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import data from './data.json';
 import OptionBtn from './OptionBtn';
 import PreviousChoices from './PreviousChoices';
+import Swal from "sweetalert2";
 
 
 
@@ -25,7 +26,7 @@ export default class MainStory extends Component {
         
         
         if (this.state.counter >= this.state.counterMax) {
-            alert("Fin");
+            Swal.fire("Congratulations!", "You've made it to the end");
         } else if(btnId === "A" && this.state.lastChoice !== "A"){
             this.setState({
                 counter: prevCounter+1,
